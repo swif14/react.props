@@ -1,15 +1,24 @@
-import React from 'react';
+import React, {useState}from 'react';
 import ReactDOM from 'react-dom/client';
-import Components from './Components';
 
-var Array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+
 function App () {
+  
+  const [number1, increaseOne] = useState("")
+  const [number2, increaseTwo] = useState("")
   return (
    <React.Fragment>
-    <Components Array = {Array}></Components>
+
+    <button  style={{backgroundColor: "red", color: "white", border: "none"} } onClick={() => increaseOne(document.write(number1 + 1))}>redClick</button>
+    
+    <button  style={{backgroundColor: "green", color: "white", border: "none", marginLeft: "15px"} } onClick={() => increaseTwo(document.write(number2 + 2))}>greenClick</button>
+
    </React.Fragment>
   )
 }
+
 
 var root = document.getElementById("root");
 ReactDOM.createRoot(root).render(<App></App>);
